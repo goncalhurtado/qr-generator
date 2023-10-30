@@ -16,7 +16,6 @@ const Qr = ({ inputData }) => {
   };
   return (
     <>
-      <div>Qr</div>
       <QRCode value={data} bgColor={bg} fgColor={color} />
       <MuiColorInput value={bg} onChange={handlebg} />
       <MuiColorInput value={color} onChange={handlecolor} />
