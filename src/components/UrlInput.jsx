@@ -4,11 +4,10 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 
-function UrlInput() {
-  const [data, setData] = useState("");
+function UrlInput({ data, setData }) {
   const [temp, setTemp] = useState("");
   //validation
-  const [error, setError] = useState("");
+  const [error, setError] = useState({ type: "", message: "" });
 
   const handleChange = (e) => {
     setError("");
@@ -16,17 +15,23 @@ function UrlInput() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const regex =
       /^(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w-.,@?^=%&:/~+#]*[\w-@?^=%&/~+#])?/;
 
+    if (temp === "" || temp === null) {
+      return setError({
+        type: "error",
+        message: "Debes ingresar una url",
+      });
+    }
+
     if (!temp.match(regex)) {
-      setError("error");
+      setError({ type: "error", message: "Introduce una url valida" });
       return;
     }
 
     setData(temp);
-    setError("success");
+    setError({ type: "success", message: "Ulr correcto" });
     console.log(error);
   };
 
@@ -47,10 +52,13 @@ function UrlInput() {
               ),
             }}
             onChange={handleChange}
-            helperText={error === "error" ? "Introduce una url valida" : ""}
+            helperText={error.type === "error" ? error.message : ""}
             placeholder="https://www.ejemplo.com"
-            error={error === "error" ? true : false}
-            {...(error === "success" && { focused: true, color: "success" })}
+            error={error.type === "error" ? true : false}
+            {...(error.type === "success" && {
+              focused: true,
+              color: "success",
+            })}
           />
 
           <Button variant="contained" type="submit">
