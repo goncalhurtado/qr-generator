@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Qr from "./Qr";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
+import Button from "@mui/material/Button";
 
 function UrlInput() {
+  const [data, setData] = useState("");
+  const [temp, setTemp] = useState("");
+  const handleChange = (e) => {
+    setTemp(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setData(temp);
+  };
+
   return (
     <>
       <div>
-        <div>
+        <form onSubmit={handleSubmit}>
           <TextField
             label="Url"
             id="outlined-start-adornment"
@@ -17,10 +28,14 @@ function UrlInput() {
                 <InputAdornment position="start"></InputAdornment>
               ),
             }}
+            onChange={handleChange}
           />
-        </div>
+          <Button variant="contained" type="submit">
+            Generate QR
+          </Button>
+        </form>
       </div>
-      <Qr />
+      <Qr inputData={data} />
     </>
   );
 }
