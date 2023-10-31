@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Qr from "./Qr";
+
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
@@ -31,8 +31,7 @@ function UrlInput({ data, setData }) {
     }
 
     setData(temp);
-    setError({ type: "success", message: "Ulr correcto" });
-    console.log(error);
+    setError({ type: "success", message: "Url correcto" });
   };
 
   return (
@@ -47,11 +46,11 @@ function UrlInput({ data, setData }) {
               m: 1,
               width: "50%",
             }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start"></InputAdornment>
-              ),
-            }}
+            // InputProps={{
+            //   startAdornment: (
+            //     <InputAdornment position="start"></InputAdornment>
+            //   ),
+            // }}
             onChange={handleChange}
             helperText={error.type === "error" ? error.message : ""}
             placeholder="https://www.ejemplo.com"

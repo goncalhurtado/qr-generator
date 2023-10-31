@@ -33,7 +33,7 @@ const Generator = () => {
       </Box>
       {value === "url" && <UrlInput data={data} setData={setData} />}
       {value === "whatsapp" && <WhatsappInput data={data} setData={setData} />}
-      {value === "mailInput" && <MailInput />}
+      {value === "mailInput" && <MailInput data={data} setData={setData} />}
       <div>
         <Qr inputData={data} />
       </div>

@@ -13,14 +13,13 @@ const WhatsappInput = ({ data, setData }) => {
     setError({ type: "", message: "" });
     setTemp({ ...temp, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = (e) => {
-    const inputNumber = document.getElementById("inputNumber");
-    const inputMessage = document.getElementById("inputMessage");
     const regex = /^\d{1,15}$/;
 
     e.preventDefault();
 
-    if (inputNumber.value === "" || inputNumber.value === null) {
+    if (temp.number === "" || temp.number === null) {
       return setError({
         type: "error",
         message: "Debes ingresar un numero de Whatsapp",
@@ -49,11 +48,6 @@ const WhatsappInput = ({ data, setData }) => {
         <form onSubmit={handleSubmit}>
           <TextField
             type=""
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start"></InputAdornment>
-              ),
-            }}
             name="number"
             id="inputNumber"
             label="Número de Whatsapp"
@@ -70,29 +64,26 @@ const WhatsappInput = ({ data, setData }) => {
               color: "success",
             })}
           />
-          <TextField
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start"></InputAdornment>
-              ),
-            }}
-            name="message"
-            id="inputMessage"
-            label="Mensaje (opcional)"
-            multiline
-            rows={4}
-            helperText={error.type === "errorMessage" ? error.message : ""}
-            error={error.type === "errorMessage" ? true : false}
-            {...(error.type === "errorMessage" && {
-              focused: true,
-              color: "error",
-            })}
-            {...(error.type === "success" && {
-              focused: true,
-              color: "success",
-            })}
-            onChange={handleChange}
-          />
+          <div>
+            <TextField
+              name="message"
+              id="inputMessage"
+              label="Mensaje (opcional)"
+              multiline
+              rows={4}
+              helperText={error.type === "errorMessage" ? error.message : ""}
+              error={error.type === "errorMessage" ? true : false}
+              {...(error.type === "errorMessage" && {
+                focused: true,
+                color: "error",
+              })}
+              {...(error.type === "success" && {
+                focused: true,
+                color: "success",
+              })}
+              onChange={handleChange}
+            />
+          </div>
           <Button variant="contained" type="submit">
             Generar QR
           </Button>
