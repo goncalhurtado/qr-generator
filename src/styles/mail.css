@@ -1,5 +1,40 @@
-.containerForm {
-    width: 100%;
-    height: 100%;
-    padding-bottom: 5px;
+/* .inputMail {width: 350px;
+background-color: blue;
+}	 */
+
+
+/* .inputSubject{
+background-color: blue;
+} */
+
+
+/* .inputMessage{
+background-color: blue;
+} */
+
+@media (min-width: 381px) and (max-width: 765px) {
+    /* Iphone */
+    /* .inputMail {
+background-color: red;
+}	 */
+    /* .inputSubject{
+        background-color: red;
+
+} */
+    /* .inputMessage{
+background-color: red;
+} */
+}
+
+@media (min-width: 766px) and (max-width: 1040px) {
+    /* Ipad */
+    /* .inputMail {
+background-color: green;
+}	 */
+    /* .inputSubject{
+background-color: green;
+} */
+    /* .inputMessage{
+background-color: green;
+} */
 }

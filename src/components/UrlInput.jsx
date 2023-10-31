@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-import "../styles/mail.css";
+import "../styles/url.css";
 
 function UrlInput({ setData }) {
   const [temp, setTemp] = useState("");
@@ -39,10 +39,7 @@ function UrlInput({ setData }) {
       <div className="containerForm">
         <form onSubmit={handleSubmit}>
           <TextField
-            className=""
-            sx={{
-              width: "100vh",
-            }}
+            className="formInput"
             type="url"
             label="Url"
             id="inputMail"
@@ -55,7 +52,7 @@ function UrlInput({ setData }) {
               color: "success",
             })}
           />
-          <div className="mt-3">
+          <div className="botonSubmit">
             <Button variant="contained" type="submit">
               Generar QR
             </Button>

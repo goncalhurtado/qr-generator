@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 import { createMailLink } from "../helpers/createMailLink";
+import "../styles/mail.css";
 
 const MailInput = ({ setData }) => {
   const [temp, setTemp] = useState({ mail: "", subject: "", message: "" });
@@ -62,12 +63,13 @@ const MailInput = ({ setData }) => {
   return (
     <>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="containerForm">
           <TextField
             name="mail"
             type="email"
             label="Mail"
             id="inputMail"
+            className="inputMail"
             sx={{
               m: 1,
               width: "50%",
@@ -87,6 +89,7 @@ const MailInput = ({ setData }) => {
             type="text"
             label="Asunto"
             id="inputSubject"
+            className="inputSubject"
             sx={{
               m: 1,
               width: "50%",
@@ -120,9 +123,11 @@ const MailInput = ({ setData }) => {
               onChange={handleChange}
             />
           </div>
-          <Button variant="contained" type="submit">
-            Generar QR
-          </Button>
+          <div className="botonSubmit">
+            <Button variant="contained" type="submit">
+              Generar QR
+            </Button>
+          </div>
         </form>
       </div>
       <div></div>

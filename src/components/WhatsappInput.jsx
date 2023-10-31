@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 import { createWpLink } from "../helpers/createWpLink";
+import "../styles/whatsapp.css";
 
 const WhatsappInput = ({ setData }) => {
   const [temp, setTemp] = useState({ number: "", message: "" });
@@ -45,7 +46,7 @@ const WhatsappInput = ({ setData }) => {
   return (
     <div>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="containerForm">
           <div>
             <TextField
               sx={{
@@ -55,6 +56,7 @@ const WhatsappInput = ({ setData }) => {
               type=""
               name="number"
               id="inputNumber"
+              className="inputNumber"
               label="Número de Whatsapp"
               onChange={handleChange}
               helperText={error.type === "error" ? error.message : ""}
@@ -74,6 +76,7 @@ const WhatsappInput = ({ setData }) => {
               }}
               name="message"
               id="inputMessage"
+              className="inputMessage"
               label="Mensaje (opcional)"
               multiline
               rows={4}
@@ -90,7 +93,7 @@ const WhatsappInput = ({ setData }) => {
               onChange={handleChange}
             />
           </div>
-          <div className="mb-3">
+          <div className="botonSubmit">
             <Button variant="contained" type="submit">
               Generar QR
             </Button>
