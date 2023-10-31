@@ -5,6 +5,7 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import WhatsappInput from "../components/WhatsappInput";
 import Qr from "../components/Qr";
+import MailInput from "../components/MailInput";
 
 const Generator = () => {
   const [value, setValue] = React.useState("url");
@@ -27,11 +28,12 @@ const Generator = () => {
         >
           <Tab value="url" label="Url" />
           <Tab value="whatsapp" label="Whatsapp" />
-          <Tab value="three" label="Item Three" />
+          <Tab value="mailInput" label="Mail" />
         </Tabs>
       </Box>
       {value === "url" && <UrlInput data={data} setData={setData} />}
       {value === "whatsapp" && <WhatsappInput data={data} setData={setData} />}
+      {value === "mailInput" && <MailInput />}
       <div>
         <Qr inputData={data} />
       </div>
