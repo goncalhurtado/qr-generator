@@ -31,8 +31,7 @@ const Qr = ({ inputData }) => {
   return (
     <>
       {data != "" && (
-        <>
-          {" "}
+        <div className="p-0 m-0">
           <QRCode value={data} bgColor={bg} fgColor={color} />
           <div>
             <MuiColorInput value={bg} onChange={handlebg} />
@@ -43,7 +42,7 @@ const Qr = ({ inputData }) => {
               )}
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );

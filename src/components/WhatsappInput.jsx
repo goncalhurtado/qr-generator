@@ -4,7 +4,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 import { createWpLink } from "../helpers/createWpLink";
 
-const WhatsappInput = ({ data, setData }) => {
+const WhatsappInput = ({ setData }) => {
   const [temp, setTemp] = useState({ number: "", message: "" });
   //validation
   const [error, setError] = useState({ type: "", message: "" });
@@ -46,26 +46,32 @@ const WhatsappInput = ({ data, setData }) => {
     <div>
       <div>
         <form onSubmit={handleSubmit}>
-          <TextField
-            type=""
-            name="number"
-            id="inputNumber"
-            label="Número de Whatsapp"
-            sx={{
-              m: 1,
-              width: "50%",
-            }}
-            onChange={handleChange}
-            helperText={error.type === "error" ? error.message : ""}
-            placeholder="Teléfono sin espacios ni puntos"
-            error={error.type === "error" ? true : false}
-            {...(error.type === "success" && {
-              focused: true,
-              color: "success",
-            })}
-          />
           <div>
             <TextField
+              sx={{
+                m: 1,
+                width: "80vh",
+              }}
+              type=""
+              name="number"
+              id="inputNumber"
+              label="Número de Whatsapp"
+              onChange={handleChange}
+              helperText={error.type === "error" ? error.message : ""}
+              placeholder="Teléfono sin espacios ni puntos"
+              error={error.type === "error" ? true : false}
+              {...(error.type === "success" && {
+                focused: true,
+                color: "success",
+              })}
+            />
+          </div>
+          <div>
+            <TextField
+              sx={{
+                m: 1,
+                width: "50vh",
+              }}
               name="message"
               id="inputMessage"
               label="Mensaje (opcional)"
@@ -84,9 +90,11 @@ const WhatsappInput = ({ data, setData }) => {
               onChange={handleChange}
             />
           </div>
-          <Button variant="contained" type="submit">
-            Generar QR
-          </Button>
+          <div className="mb-3">
+            <Button variant="contained" type="submit">
+              Generar QR
+            </Button>
+          </div>
         </form>
       </div>
       <div></div>

@@ -5,7 +5,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 import { createMailLink } from "../helpers/createMailLink";
 
-const MailInput = ({ data, setData }) => {
+const MailInput = ({ setData }) => {
   const [temp, setTemp] = useState({ mail: "", subject: "", message: "" });
   //validation
   const [error, setError] = useState({ type: "", message: "" });
@@ -55,7 +55,7 @@ const MailInput = ({ data, setData }) => {
     }
 
     setData(createMailLink(temp));
-    console.log(data);
+
     setError({ type: "success", message: "Mail correcto" });
   };
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
 import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 
-function UrlInput({ data, setData }) {
+import "../styles/mail.css";
+
+function UrlInput({ setData }) {
   const [temp, setTemp] = useState("");
   //validation
   const [error, setError] = useState({ type: "", message: "" });
@@ -36,21 +36,16 @@ function UrlInput({ data, setData }) {
 
   return (
     <>
-      <div>
+      <div className="containerForm">
         <form onSubmit={handleSubmit}>
           <TextField
+            className=""
+            sx={{
+              width: "100vh",
+            }}
             type="url"
             label="Url"
-            id="outlined-start-adornment"
-            sx={{
-              m: 1,
-              width: "50%",
-            }}
-            // InputProps={{
-            //   startAdornment: (
-            //     <InputAdornment position="start"></InputAdornment>
-            //   ),
-            // }}
+            id="inputMail"
             onChange={handleChange}
             helperText={error.type === "error" ? error.message : ""}
             placeholder="https://www.ejemplo.com"
@@ -60,13 +55,13 @@ function UrlInput({ data, setData }) {
               color: "success",
             })}
           />
-
-          <Button variant="contained" type="submit">
-            Generar QR
-          </Button>
+          <div className="mt-3">
+            <Button variant="contained" type="submit">
+              Generar QR
+            </Button>
+          </div>
         </form>
       </div>
-      <div></div>
     </>
   );
 }
