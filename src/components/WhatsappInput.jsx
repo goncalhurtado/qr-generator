@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
+import { createWpLink } from "../helpers/createWpLink";
 
 const WhatsappInput = ({ data, setData }) => {
-  const [temp, setTemp] = useState("");
+  const [temp, setTemp] = useState({ number: "", message: "" });
   //validation
   const [error, setError] = useState({ type: "", message: "" });
 
   const handleChange = (e) => {
-    setError("");
-    setTemp(e.target.value);
+    setError({ type: "", message: "" });
+    setTemp({ ...temp, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
     const inputNumber = document.getElementById("inputNumber");
@@ -26,22 +27,21 @@ const WhatsappInput = ({ data, setData }) => {
       });
     }
 
-    if (!temp.match(regex)) {
+    if (!temp.number.match(regex)) {
       setError({ type: "error", message: "Introduce un numero válido" });
 
       return;
     }
 
-    if (inputMessage.value === "") {
+    if (temp.message.value === "") {
       return setError({
         type: "errorMessage",
         message: "Debes ingresar un mensaje",
       });
     }
 
-    setData(temp);
+    setData(createWpLink(temp));
     setError({ type: "success", message: "Whatsapp correcto" });
-    console.log(error);
   };
   return (
     <div>
@@ -53,6 +53,7 @@ const WhatsappInput = ({ data, setData }) => {
                 <InputAdornment position="start"></InputAdornment>
               ),
             }}
+            name="number"
             id="inputNumber"
             label="Number"
             sx={{
@@ -74,6 +75,7 @@ const WhatsappInput = ({ data, setData }) => {
                 <InputAdornment position="start"></InputAdornment>
               ),
             }}
+            name="message"
             id="inputMessage"
             label="Message"
             multiline

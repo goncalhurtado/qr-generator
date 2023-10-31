@@ -66,7 +66,6 @@ function UrlInput({ data, setData }) {
           </Button>
         </form>
       </div>
-      <Qr inputData={data} />
     </>
   );
 }

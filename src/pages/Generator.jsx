@@ -4,6 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import WhatsappInput from "../components/WhatsappInput";
+import Qr from "../components/Qr";
 
 const Generator = () => {
   const [value, setValue] = React.useState("url");
@@ -31,6 +32,9 @@ const Generator = () => {
       </Box>
       {value === "url" && <UrlInput data={data} setData={setData} />}
       {value === "whatsapp" && <WhatsappInput data={data} setData={setData} />}
+      <div>
+        <Qr inputData={data} />
+      </div>
     </>
   );
 };
