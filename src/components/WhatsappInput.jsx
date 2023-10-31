@@ -48,6 +48,7 @@ const WhatsappInput = ({ data, setData }) => {
       <div>
         <form onSubmit={handleSubmit}>
           <TextField
+            type=""
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start"></InputAdornment>
@@ -55,7 +56,7 @@ const WhatsappInput = ({ data, setData }) => {
             }}
             name="number"
             id="inputNumber"
-            label="Number"
+            label="Número de Whatsapp"
             sx={{
               m: 1,
               width: "50%",
@@ -77,7 +78,7 @@ const WhatsappInput = ({ data, setData }) => {
             }}
             name="message"
             id="inputMessage"
-            label="Message"
+            label="Mensaje (opcional)"
             multiline
             rows={4}
             helperText={error.type === "errorMessage" ? error.message : ""}
@@ -93,7 +94,7 @@ const WhatsappInput = ({ data, setData }) => {
             onChange={handleChange}
           />
           <Button variant="contained" type="submit">
-            Generate QR
+            Generar QR
           </Button>
         </form>
       </div>

@@ -40,6 +40,7 @@ function UrlInput({ data, setData }) {
       <div>
         <form onSubmit={handleSubmit}>
           <TextField
+            type="url"
             label="Url"
             id="outlined-start-adornment"
             sx={{
@@ -62,7 +63,7 @@ function UrlInput({ data, setData }) {
           />
 
           <Button variant="contained" type="submit">
-            Generate QR
+            Generar QR
           </Button>
         </form>
       </div>
