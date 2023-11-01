@@ -12,7 +12,7 @@ const Qr = ({ inputData }) => {
 
   //Color QR
 
-  const [color, setColor] = useState({ main: "#ffffff", bg: "#000000" });
+  const [color, setColor] = useState({ main: "#000000", bg: "#ffffff" });
   const [clear, setClear] = useState(false);
 
   //Download Funct
@@ -28,7 +28,7 @@ const Qr = ({ inputData }) => {
   };
 
   useEffect(() => {
-    if (color.main !== "#ffffff" || color.bg !== "#000000") {
+    if (color.main !== "#000000" || color.bg !== "#ffffff") {
       setClear(true);
     }
   }, [color]);
@@ -43,7 +43,7 @@ const Qr = ({ inputData }) => {
               </Box>
             ) : (
               <div>
-                <h5>Tu Codigo Qr va aquí</h5>
+                <h5>Tu Código QR va aquí</h5>
               </div>
             )}
           </div>
