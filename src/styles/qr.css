@@ -1,0 +1,44 @@
+.qrPageContainer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.row {
+    /* padding: 0px!important; */
+    margin: 0px!important;
+}
+
+.qrContainer {
+    width: 500px;
+    height: 400px;
+    /* border: 1px solid #c4c4c4; */
+    background-color: #f4f4f4;
+    color: #848484;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.setupContainer {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.qr {
+    width: 272px;
+    height: 272px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restablecerColor {
+    cursor: pointer;
+}

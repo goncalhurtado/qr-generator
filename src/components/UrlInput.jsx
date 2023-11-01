@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Qr from "./Qr";
 import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
+import "../styles/url.css";
 
-function UrlInput({ data, setData }) {
+function UrlInput({ setData }) {
   const [temp, setTemp] = useState("");
   //validation
   const [error, setError] = useState({ type: "", message: "" });
@@ -31,26 +32,26 @@ function UrlInput({ data, setData }) {
     }
 
     setData(temp);
-    setError({ type: "success", message: "Ulr correcto" });
-    console.log(error);
+    setError({ type: "success", message: "Url correcto" });
   };
 
   return (
     <>
-      <div>
+      <div className="d-flex justify-content-center">
+        <Stack className="alertInfo text-start">
+          <Alert severity="info">
+            Introduce una URL para generar un Código QR para acceder a una
+            página web al escanearlo."
+          </Alert>
+        </Stack>
+      </div>
+      <div className="containerForm">
         <form onSubmit={handleSubmit}>
           <TextField
+            className="formInput mt-1"
+            type="url"
             label="Url"
-            id="outlined-start-adornment"
-            sx={{
-              m: 1,
-              width: "50%",
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start"></InputAdornment>
-              ),
-            }}
+            id="inputMail"
             onChange={handleChange}
             helperText={error.type === "error" ? error.message : ""}
             placeholder="https://www.ejemplo.com"
@@ -60,13 +61,13 @@ function UrlInput({ data, setData }) {
               color: "success",
             })}
           />
-
-          <Button variant="contained" type="submit">
-            Generate QR
-          </Button>
+          <div className="botonSubmit mt-3">
+            <Button variant="contained" type="submit">
+              Generar QR
+            </Button>
+          </div>
         </form>
       </div>
-      <div></div>
     </>
   );
 }

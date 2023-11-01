@@ -1,0 +1,51 @@
+.containerForm {
+    text-align: center;
+    padding: 4px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.alertInfo {
+    width: 500px;
+}
+
+.inputMail {
+    width: 500px;
+}
+
+.inputSubject {
+    width: 500px;
+}
+
+.inputMessage {
+    width: 500px;
+}
+
+@media (min-width: 381px) and (max-width: 765px) {
+    /* Iphone */
+    .inputMail {
+        width: 350px;
+    }
+    .inputSubject {
+        width: 350px;
+    }
+    .inputMessage {
+        width: 350px;
+    }
+    .alertInfo {
+        width: 350px;
+    }
+}
+
+@media (min-width: 766px) and (max-width: 1040px) {
+    /* Ipad */
+    .inputMail {
+        width: 500px;
+    }
+    .inputSubject {
+        width: 500px;
+    }
+    .inputMessage {
+        width: 500px;
+    }
+}
