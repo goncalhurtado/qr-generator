@@ -8,7 +8,6 @@ import WhatsappInput from "../components/WhatsappInput";
 import Qr from "../components/Qr";
 import MailInput from "../components/MailInput";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import "../styles/generator.css";
 
