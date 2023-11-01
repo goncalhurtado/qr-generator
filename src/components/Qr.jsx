@@ -22,7 +22,7 @@ const Qr = ({ inputData }) => {
 
     if (qrToDownload) {
       htmlToImage.toBlob(qrToDownload).then(function (blob) {
-        saveAs(blob, "downloaded-qr-elLinkDeGoncal.png");
+        saveAs(blob, "creadoEn-generador-de-qr.netlify.app.png");
       });
     }
   };
