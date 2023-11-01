@@ -30,6 +30,9 @@ const Generator = () => {
         sx={{
           borderBottom: "1px solid black",
           borderTop: "1px solid black",
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         <Tabs

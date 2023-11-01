@@ -68,7 +68,7 @@ const WhatsappInput = ({ setData }) => {
             <TextField
               name="message"
               id="inputMessage"
-              className="inputMessage mt-4"
+              className="inputMessage mt-3"
               label="Mensaje (opcional)"
               multiline
               rows={4}
@@ -85,7 +85,7 @@ const WhatsappInput = ({ setData }) => {
               onChange={handleChange}
             />
           </div>
-          <div className="botonSubmit mt-4">
+          <div className="botonSubmit mt-3">
             <Button variant="contained" type="submit">
               Generar QR
             </Button>

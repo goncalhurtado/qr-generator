@@ -7,16 +7,16 @@
 
 .inputNumber {
     width: 500px;
-    margin-top: 10px;
 }
 
 .inputMessage {
     width: 500px;
 }
 
-.botonSubmit {
+
+/* .botonSubmit {
     margin-top: 5px;
-}
+} */
 
 @media (min-width: 381px) and (max-width: 765px) {
     /* Iphone */

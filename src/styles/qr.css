@@ -1,0 +1,36 @@
+.qrPageContainer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.qrContainer {
+    width: 500px;
+    height: 500px;
+    /* border: 1px solid #c4c4c4; */
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.setupContainer {
+    /* background-color: blue; */
+    width: 400px;
+    height: 500px;
+}
+
+.qr {
+    width: 272px;
+    height: 272px;
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* .colorContainer {
+    background-color: red;
+} */
