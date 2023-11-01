@@ -4,10 +4,11 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-
 import WhatsappInput from "../components/WhatsappInput";
 import Qr from "../components/Qr";
 import MailInput from "../components/MailInput";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import "../styles/generator.css";
 
@@ -78,7 +79,16 @@ const Generator = () => {
           bottom: "0",
         }}
       >
-        <h6 className="m-0">Desarrollado por Goncal Hurtado</h6>
+        <div className="d-flex justify-content-center">
+          <h6 className="m-0">Desarrollado por Goncal Hurtado</h6>
+          <GitHubIcon
+            className="ms-1"
+            style={{ cursor: "pointer" }}
+            onClick={(e) => {
+              window.open("https://github.com/goncalhurtado", "_blank");
+            }}
+          />
+        </div>
       </div>
     </>
   );

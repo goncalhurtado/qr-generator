@@ -1,35 +1,19 @@
 import React, { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
-import { MuiColorInput } from "mui-color-input";
-import Link from "@mui/material/Link";
 import "../styles/qr.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import * as htmlToImage from "html-to-image";
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
 import { saveAs } from "file-saver";
+import Color from "./Color";
 
 const Qr = ({ inputData }) => {
-  //Color Function
-
-  const [bg, setBg] = useState("#ffffff");
-  const [color, setColor] = useState("#000000");
-  const [clear, setClear] = useState(false);
-
   const data = inputData || "";
 
-  const handlebg = (newValue) => {
-    setBg(newValue);
-  };
-  const handlecolor = (newValue) => {
-    setColor(newValue);
-  };
+  //Color QR
 
-  const clearColors = () => {
-    setBg("#ffffff");
-    setColor("#000000");
-    setClear(false);
-  };
+  const [color, setColor] = useState({ main: "#ffffff", bg: "#000000" });
+  const [clear, setClear] = useState(false);
 
   //Download Funct
 
@@ -38,25 +22,24 @@ const Qr = ({ inputData }) => {
 
     if (qrToDownload) {
       htmlToImage.toBlob(qrToDownload).then(function (blob) {
-        saveAs(blob, "downloaded-qr.png");
-        console.log("Downloaded");
+        saveAs(blob, "downloaded-qr-elLinkDeGoncal.png");
       });
     }
   };
 
   useEffect(() => {
-    if (bg !== "#ffffff" || color !== "#000000") {
+    if (color.main !== "#ffffff" || color.bg !== "#000000") {
       setClear(true);
     }
-  }, [bg, color]);
+  }, [color]);
   return (
     <>
       <div className="qrPageContainer mb-3 row">
         <div className="qrContainer col-12 col-md-6">
           <div id="qrToDownload" className="qr p-2">
             {data != "" ? (
-              <Box sx={{ backgroundColor: bg, padding: "10px" }}>
-                <QRCode value={data} bgColor={bg} fgColor={color} />
+              <Box sx={{ backgroundColor: `${color.bg}`, padding: "10px" }}>
+                <QRCode value={data} bgColor={color.bg} fgColor={color.main} />
               </Box>
             ) : (
               <div>
@@ -68,34 +51,12 @@ const Qr = ({ inputData }) => {
         <div className="setupContainer col-12 col-md-6">
           {data != "" ? (
             <>
-              <div className="colorContainer mt-3">
-                <>
-                  <MuiColorInput
-                    value={color}
-                    onChange={handlecolor}
-                    label="Color Principal"
-                    className="mt-2"
-                  />
-
-                  <MuiColorInput
-                    value={bg}
-                    onChange={handlebg}
-                    label="Color Fondo"
-                    className="mt-4"
-                  />
-                </>
-              </div>
-
-              <div>
-                {clear && (
-                  <Link
-                    className="restablecerColor"
-                    onClick={() => clearColors()}
-                  >
-                    Restablecer Color
-                  </Link>
-                )}
-              </div>
+              <Color
+                color={color}
+                setColor={setColor}
+                clear={clear}
+                setClear={setClear}
+              />
               <div className="descargarContainer mt-3">
                 <Button
                   variant="contained"
