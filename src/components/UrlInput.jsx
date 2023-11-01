@@ -61,7 +61,7 @@ function UrlInput({ setData }) {
               color: "success",
             })}
           />
-          <div className="botonSubmit">
+          <div className="botonSubmit mt-3">
             <Button variant="contained" type="submit">
               Generar QR
             </Button>

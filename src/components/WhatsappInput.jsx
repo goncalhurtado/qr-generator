@@ -62,7 +62,7 @@ const WhatsappInput = ({ setData }) => {
               name="number"
               id="inputNumber"
               className="inputNumber mt-1"
-              label="Número de Whatsapp text-start"
+              label="Número de Whatsapp"
               onChange={handleChange}
               helperText={error.type === "error" ? error.message : ""}
               placeholder="Teléfono sin espacios ni puntos"

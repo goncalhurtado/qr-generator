@@ -5,8 +5,13 @@ import Link from "@mui/material/Link";
 import "../styles/qr.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import * as htmlToImage from "html-to-image";
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
+import { saveAs } from "file-saver";
 
 const Qr = ({ inputData }) => {
+  //Color Function
+
   const [bg, setBg] = useState("#ffffff");
   const [color, setColor] = useState("#000000");
   const [clear, setClear] = useState(false);
@@ -26,6 +31,19 @@ const Qr = ({ inputData }) => {
     setClear(false);
   };
 
+  //Download Funct
+
+  const handleDownload = () => {
+    const qrToDownload = document.getElementById("qrToDownload");
+
+    if (qrToDownload) {
+      htmlToImage.toBlob(qrToDownload).then(function (blob) {
+        saveAs(blob, "downloaded-qr.png");
+        console.log("Downloaded");
+      });
+    }
+  };
+
   useEffect(() => {
     if (bg !== "#ffffff" || color !== "#000000") {
       setClear(true);
@@ -33,9 +51,9 @@ const Qr = ({ inputData }) => {
   }, [bg, color]);
   return (
     <>
-      <div className="qrPageContainer mt-3 mb-3 row">
+      <div className="qrPageContainer mb-3 row">
         <div className="qrContainer col-12 col-md-6">
-          <div className="qr p-2">
+          <div id="qrToDownload" className="qr p-2">
             {data != "" ? (
               <Box sx={{ backgroundColor: bg, padding: "10px" }}>
                 <QRCode value={data} bgColor={bg} fgColor={color} />
@@ -48,12 +66,10 @@ const Qr = ({ inputData }) => {
           </div>
         </div>
         <div className="setupContainer col-12 col-md-6">
-          {data != "" && (
+          {data != "" ? (
             <>
               <div className="colorContainer mt-3">
                 <>
-                  {/* <h6 className="p-0 m-2">Personalizar</h6> */}
-
                   <MuiColorInput
                     value={color}
                     onChange={handlecolor}
@@ -81,11 +97,23 @@ const Qr = ({ inputData }) => {
                 )}
               </div>
               <div className="descargarContainer mt-3">
-                <Button variant="contained" color="primary">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleDownload}
+                >
                   Descargar
                 </Button>
               </div>
             </>
+          ) : (
+            <div className="">
+              <div>
+                <h5 style={{ color: "#848484" }}>
+                  Aqui vas a personalizar tu QR
+                </h5>
+              </div>
+            </div>
           )}
         </div>
       </div>
