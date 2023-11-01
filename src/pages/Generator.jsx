@@ -12,7 +12,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import "../styles/generator.css";
 
-const Generator = () => {
+const GeneratorComponent = () => {
   const [value, setValue] = React.useState("url");
 
   const [data, setData] = useState("");
@@ -94,4 +94,4 @@ const Generator = () => {
   );
 };
 
-export default Generator;
+export default GeneratorComponent;
