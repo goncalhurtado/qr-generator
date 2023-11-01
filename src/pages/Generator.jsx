@@ -9,6 +9,8 @@ import WhatsappInput from "../components/WhatsappInput";
 import Qr from "../components/Qr";
 import MailInput from "../components/MailInput";
 
+import "../styles/generator.css";
+
 const Generator = () => {
   const [value, setValue] = React.useState("url");
 
@@ -21,7 +23,7 @@ const Generator = () => {
     <>
       <h3
         className="text-center m-0 p-2"
-        style={{ backgroundColor: "#3f50b5", color: "white" }}
+        style={{ backgroundColor: "#1565c0", color: "white" }}
       >
         Generador de Qr
       </h3>
@@ -33,6 +35,7 @@ const Generator = () => {
           textAlign: "center",
           display: "flex",
           justifyContent: "center",
+          marginBottom: "20px",
         }}
       >
         <Tabs
@@ -67,6 +70,12 @@ const Generator = () => {
           <Qr inputData={data} />
         </Grid>
       </Grid>
+      <div
+        className="text-center w-100 p-3"
+        style={{ backgroundColor: "#1565c0", color: "white", bottom: "0" }}
+      >
+        <h6 className="m-0">Desarrollado por Goncal Hurtado</h6>
+      </div>
     </>
   );
 };

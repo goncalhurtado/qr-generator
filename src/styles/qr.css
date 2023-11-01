@@ -4,11 +4,17 @@
     justify-content: center;
 }
 
+.row {
+    /* padding: 0px!important; */
+    margin: 0px!important;
+}
+
 .qrContainer {
     width: 500px;
     height: 500px;
     /* border: 1px solid #c4c4c4; */
     background-color: #f4f4f4;
+    color: #848484;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -24,13 +30,11 @@
 .qr {
     width: 272px;
     height: 272px;
-    /* background-color: white; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-/* .colorContainer {
-    background-color: red;
-} */
+.restablecerColor {
+    cursor: pointer;
+}

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 import { createWpLink } from "../helpers/createWpLink";
 import "../styles/whatsapp.css";
@@ -86,7 +85,7 @@ const WhatsappInput = ({ setData }) => {
             />
           </div>
           <div className="botonSubmit mt-3">
-            <Button variant="contained" type="submit">
+            <Button variant="contained" color="primary">
               Generar QR
             </Button>
           </div>

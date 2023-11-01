@@ -4,6 +4,7 @@ import { MuiColorInput } from "mui-color-input";
 import Link from "@mui/material/Link";
 import "../styles/qr.css";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 
 const Qr = ({ inputData }) => {
   const [bg, setBg] = useState("#ffffff");
@@ -32,8 +33,8 @@ const Qr = ({ inputData }) => {
   }, [bg, color]);
   return (
     <>
-      <div className="qrPageContainer mt-3">
-        <div className="qrContainer">
+      <div className="qrPageContainer mt-3 row">
+        <div className="qrContainer col-12 col-md-6">
           <div className="qr p-2">
             {data != "" ? (
               <Box sx={{ backgroundColor: bg, padding: "10px" }}>
@@ -41,29 +42,48 @@ const Qr = ({ inputData }) => {
               </Box>
             ) : (
               <div>
-                <h5>Tu qr va aqui mi reyyy</h5>
+                <h5>Tu Codigo Qr va aquí</h5>
               </div>
             )}
           </div>
         </div>
-        <div className="setupContainer">
+        <div className="setupContainer col-12 col-md-6">
           {data != "" && (
             <>
               <div className="colorContainer mt-3">
                 <>
-                  <h5 className="p-0 mt-3">Personalizar</h5>
-                  <MuiColorInput value={bg} onChange={handlebg} />
-                  <MuiColorInput value={color} onChange={handlecolor} />
+                  <h5 className="p-0 m-2">Personalizar</h5>
+
+                  <MuiColorInput
+                    value={color}
+                    onChange={handlecolor}
+                    label="Color principal"
+                    className="mt-2"
+                  />
+
+                  <MuiColorInput
+                    value={bg}
+                    onChange={handlebg}
+                    label="Color Fondo"
+                    className="mt-4"
+                  />
                 </>
               </div>
 
               <div>
                 {clear && (
-                  <Link onClick={() => clearColors()}>Restablecer Color</Link>
+                  <Link
+                    className="restablecerColor"
+                    onClick={() => clearColors()}
+                  >
+                    Restablecer Color
+                  </Link>
                 )}
               </div>
               <div className="descargarContainer mt-3">
-                <button>asd</button>
+                <Button variant="contained" color="primary">
+                  Descargar
+                </Button>
               </div>
             </>
           )}
