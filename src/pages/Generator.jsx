@@ -25,7 +25,7 @@ const Generator = () => {
         className="text-center m-0 p-2"
         style={{ backgroundColor: "#1565c0", color: "white" }}
       >
-        Generador de Qr
+        Generador de QR
       </h3>
 
       <Box
@@ -72,7 +72,11 @@ const Generator = () => {
       </Grid>
       <div
         className="text-center w-100 p-3"
-        style={{ backgroundColor: "#1565c0", color: "white", bottom: "0" }}
+        style={{
+          backgroundColor: "#1565c0",
+          color: "white",
+          bottom: "0",
+        }}
       >
         <h6 className="m-0">Desarrollado por Goncal Hurtado</h6>
       </div>

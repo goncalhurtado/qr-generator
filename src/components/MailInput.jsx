@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-
 import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 import { createMailLink } from "../helpers/createMailLink";
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
 import "../styles/mail.css";
 
 const MailInput = ({ setData }) => {
@@ -63,13 +63,21 @@ const MailInput = ({ setData }) => {
   return (
     <>
       <div>
+        <div className="d-flex justify-content-center">
+          <Stack className="alertInfo text-start">
+            <Alert severity="info">
+              Introduce una dirección de correo electrónico y un mensaje para
+              generar un Código QR para enviar un Mail al escanearlo.
+            </Alert>
+          </Stack>
+        </div>
         <form onSubmit={handleSubmit} className="containerForm">
           <TextField
             name="mail"
             type="email"
-            label="Mail"
+            label="Email"
             id="inputMail"
-            className="inputMail"
+            className="inputMail  mt-1"
             onChange={handleChange}
             helperText={error.type === "mail" ? error.message : ""}
             placeholder="ejemplo@mail.com"

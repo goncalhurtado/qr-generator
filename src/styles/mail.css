@@ -5,6 +5,10 @@
     margin-bottom: 10px;
 }
 
+.alertInfo {
+    width: 500px;
+}
+
 .inputMail {
     width: 500px;
 }
@@ -26,6 +30,9 @@
         width: 350px;
     }
     .inputMessage {
+        width: 350px;
+    }
+    .alertInfo {
         width: 350px;
     }
 }

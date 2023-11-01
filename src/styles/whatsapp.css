@@ -1,3 +1,7 @@
+.alertInfo {
+    width: 500px;
+}
+
 .containerForm {
     text-align: center;
     padding: 4px;
@@ -24,6 +28,9 @@
         width: 350px;
     }
     .inputMessage {
+        width: 350px;
+    }
+    .alertWp {
         width: 350px;
     }
 }

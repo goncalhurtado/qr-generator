@@ -33,7 +33,7 @@ const Qr = ({ inputData }) => {
   }, [bg, color]);
   return (
     <>
-      <div className="qrPageContainer mt-3 row">
+      <div className="qrPageContainer mt-3 mb-3 row">
         <div className="qrContainer col-12 col-md-6">
           <div className="qr p-2">
             {data != "" ? (
@@ -52,12 +52,12 @@ const Qr = ({ inputData }) => {
             <>
               <div className="colorContainer mt-3">
                 <>
-                  <h5 className="p-0 m-2">Personalizar</h5>
+                  {/* <h6 className="p-0 m-2">Personalizar</h6> */}
 
                   <MuiColorInput
                     value={color}
                     onChange={handlecolor}
-                    label="Color principal"
+                    label="Color Principal"
                     className="mt-2"
                   />
 

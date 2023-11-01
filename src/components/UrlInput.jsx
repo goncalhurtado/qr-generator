@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
 import "../styles/url.css";
 
 function UrlInput({ setData }) {
@@ -36,10 +37,18 @@ function UrlInput({ setData }) {
 
   return (
     <>
+      <div className="d-flex justify-content-center">
+        <Stack className="alertInfo text-start">
+          <Alert severity="info">
+            Introduce una URL para generar un Código QR para acceder a una
+            página web al escanearlo."
+          </Alert>
+        </Stack>
+      </div>
       <div className="containerForm">
         <form onSubmit={handleSubmit}>
           <TextField
-            className="formInput"
+            className="formInput mt-1"
             type="url"
             label="Url"
             id="inputMail"
