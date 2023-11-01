@@ -70,10 +70,6 @@ const MailInput = ({ setData }) => {
             label="Mail"
             id="inputMail"
             className="inputMail"
-            sx={{
-              m: 1,
-              width: "50%",
-            }}
             onChange={handleChange}
             helperText={error.type === "mail" ? error.message : ""}
             placeholder="ejemplo@mail.com"
@@ -89,11 +85,7 @@ const MailInput = ({ setData }) => {
             type="text"
             label="Asunto"
             id="inputSubject"
-            className="inputSubject"
-            sx={{
-              m: 1,
-              width: "50%",
-            }}
+            className="inputSubject mt-3"
             onChange={handleChange}
             helperText={error.type === "subject" ? error.message : ""}
             placeholder="Aquí va el asunto"
@@ -107,6 +99,7 @@ const MailInput = ({ setData }) => {
             <TextField
               name="message"
               id="inputMessage"
+              className="inputMessage mt-3"
               label="Mensaje"
               multiline
               rows={4}

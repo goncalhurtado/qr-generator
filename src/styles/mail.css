@@ -1,40 +1,44 @@
-/* .inputMail {width: 350px;
-background-color: blue;
-}	 */
+.containerForm {
+    text-align: center;
+    padding: 4px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
 
+.inputMail {
+    width: 500px;
+}
 
-/* .inputSubject{
-background-color: blue;
-} */
+.inputSubject {
+    width: 500px;
+}
 
-
-/* .inputMessage{
-background-color: blue;
-} */
+.inputMessage {
+    width: 500px;
+}
 
 @media (min-width: 381px) and (max-width: 765px) {
     /* Iphone */
-    /* .inputMail {
-background-color: red;
-}	 */
-    /* .inputSubject{
-        background-color: red;
-
-} */
-    /* .inputMessage{
-background-color: red;
-} */
+    .inputMail {
+        width: 350px;
+    }
+    .inputSubject {
+        width: 350px;
+    }
+    .inputMessage {
+        width: 350px;
+    }
 }
 
 @media (min-width: 766px) and (max-width: 1040px) {
     /* Ipad */
-    /* .inputMail {
-background-color: green;
-}	 */
-    /* .inputSubject{
-background-color: green;
-} */
-    /* .inputMessage{
-background-color: green;
-} */
+    .inputMail {
+        width: 500px;
+    }
+    .inputSubject {
+        width: 500px;
+    }
+    .inputMessage {
+        width: 500px;
+    }
 }

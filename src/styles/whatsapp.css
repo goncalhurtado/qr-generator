@@ -5,14 +5,14 @@
     margin-bottom: 10px;
 }
 
-
-/* .inputNumber {
-    width: 100px;
+.inputNumber {
+    width: 500px;
+    margin-top: 10px;
 }
 
 .inputMessage {
     width: 500px;
-} */
+}
 
 .botonSubmit {
     margin-top: 5px;
@@ -20,20 +20,20 @@
 
 @media (min-width: 381px) and (max-width: 765px) {
     /* Iphone */
-    /* .inputNumber {
-        width: 100px;
+    .inputNumber {
+        width: 350px;
     }
     .inputMessage {
-        width: 500px;
-    } */
+        width: 350px;
+    }
 }
 
 @media (min-width: 766px) and (max-width: 1040px) {
     /* Ipad */
-    /* .inputNumber {
-        width: 100px;
+    .inputNumber {
+        width: 500px;
     }
     .inputMessage {
         width: 500px;
-    } */
+    }
 }

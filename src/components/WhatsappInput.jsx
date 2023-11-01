@@ -49,10 +49,6 @@ const WhatsappInput = ({ setData }) => {
         <form onSubmit={handleSubmit} className="containerForm">
           <div>
             <TextField
-              sx={{
-                m: 1,
-                width: "80vh",
-              }}
               type=""
               name="number"
               id="inputNumber"
@@ -70,13 +66,9 @@ const WhatsappInput = ({ setData }) => {
           </div>
           <div>
             <TextField
-              sx={{
-                m: 1,
-                width: "50vh",
-              }}
               name="message"
               id="inputMessage"
-              className="inputMessage"
+              className="inputMessage mt-4"
               label="Mensaje (opcional)"
               multiline
               rows={4}
@@ -93,7 +85,7 @@ const WhatsappInput = ({ setData }) => {
               onChange={handleChange}
             />
           </div>
-          <div className="botonSubmit">
+          <div className="botonSubmit mt-4">
             <Button variant="contained" type="submit">
               Generar QR
             </Button>
