@@ -12,11 +12,11 @@ import WhatsappInput from "./components/WhatsappInput";
 import MailInput from "./components/MailInput";
 
 function App() {
-  const [value, setValue] = React.useState("url");
+  const [value, setValue] = useState("url");
 
   const [data, setData] = useState("");
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setValue(newValue);
   };
 

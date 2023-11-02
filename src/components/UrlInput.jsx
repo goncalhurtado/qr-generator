@@ -41,7 +41,7 @@ function UrlInput({ setData }) {
         <Stack className="alertInfo text-start">
           <Alert severity="info">
             Introduce una URL para generar un Código QR para acceder a una
-            página web al escanearlo."
+            página web al escanearlo.
           </Alert>
         </Stack>
       </div>
