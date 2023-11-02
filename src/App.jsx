@@ -12,11 +12,16 @@ import WhatsappInput from "./components/WhatsappInput";
 import MailInput from "./components/MailInput";
 
 function App() {
-  const [value, setValue] = useState("url");
+  const URL_KEY = "url";
+  const WHATSAPP_KEY = "whatsapp";
+  const MAIL_KEY = "mail";
+
+  const [value, setValue] = useState(URL_KEY);
 
   const [data, setData] = useState("");
 
-  const handleChange = (newValue) => {
+  const handleChange = (event, newValue) => {
+    console.log(newValue.value);
     setValue(newValue);
   };
 
@@ -41,28 +46,28 @@ function App() {
       >
         <Tabs
           value={value}
-          onChange={handleChange}
           textColor="primary"
           indicatorColor="primary"
+          onChange={handleChange}
         >
-          <Tab value="url" label="Url" />
-          <Tab value="whatsapp" label="Whatsapp" />
-          <Tab value="mailInput" label="Mail" />
+          <Tab value={URL_KEY} label="Url" />
+          <Tab value={WHATSAPP_KEY} label="Whatsapp" />
+          <Tab value={MAIL_KEY} label="Mail" />
         </Tabs>
       </Box>
 
       <Grid container>
-        {value === "url" && (
+        {value === URL_KEY && (
           <Grid item xs={12} md={6}>
             <UrlInput setData={setData} />
           </Grid>
         )}
-        {value === "whatsapp" && (
+        {value === WHATSAPP_KEY && (
           <Grid item xs={12} md={6}>
             <WhatsappInput setData={setData} />
           </Grid>
         )}
-        {value === "mailInput" && (
+        {value === MAIL_KEY && (
           <Grid item xs={12} md={6}>
             <MailInput setData={setData} />{" "}
           </Grid>
