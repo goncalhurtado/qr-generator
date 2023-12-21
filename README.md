@@ -6,6 +6,7 @@ This project is a QR code generator built with React, leveraging the react-qr-co
 * Generate QR Codes for Email Addresses: Easily create QR codes for your email address.
 * QR Code Generation for Web Links: Generate QR codes for web links, whether for sharing on messaging apps like WhatsApp or for direct links.
 * Integration with react-qr-code: Utilizes the power of the react-qr-code library for swift and efficient QR code generation.
+* Allows for customization by altering the color scheme of the generated QR codes.
 
 ## Upcoming Features
 We are actively working on introducing new functionalities to further enhance the QR code generation experience, such as:
