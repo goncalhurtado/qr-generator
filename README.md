@@ -44,7 +44,7 @@ Initiates a preview of the application using Vite. This functionality enables yo
 * [**Generador de Qr**](https://generador-de-qr.netlify.app/)
 
 ## Autor
-Goncal Hurtado [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://goncalhurtado.dev) [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
+Goncal Hurtado [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://goncalhurtado.netlify.app/) [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/goncalhurtado/)
 
 
 
